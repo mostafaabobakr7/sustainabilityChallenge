@@ -31,6 +31,10 @@
     padding: 0.5rem 0.6rem;
     border-radius: 3px;
     width: 11rem;
+    opacity: 0.9;
+    &:hover {
+      opacity: 1;
+    }
     img {
       margin-right: 6px;
     }
