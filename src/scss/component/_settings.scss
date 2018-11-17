@@ -1,0 +1,38 @@
+.settings {
+  position: fixed;
+  bottom: 3rem;
+  left: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.show .settings__btn {
+    &.rotate svg {
+      opacity: 1;
+      transform: rotate(30deg);
+    }
+  }
+  &__btn {
+    & > svg {
+      @include fill("text");
+      transition: all 0.2s linear;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__lang {
+    @include color("radio");
+    font-size: 1.4rem;
+    font-weight: 400;
+    border: 1px solid;
+    padding: 0.5rem 0.6rem;
+    border-radius: 3px;
+    width: 11rem;
+    img {
+      margin-right: 6px;
+    }
+  }
+}

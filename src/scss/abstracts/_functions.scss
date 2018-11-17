@@ -1,0 +1,13 @@
+@function z($key) {
+  @if map-has-key($zMap, $key) {
+    @return map-get($zMap, $key);
+  }
+
+  @warn "Unknown`#{$key}` in #{$zMap}.";
+  @return null;
+}
+@function color($key) {
+  @each $theme, $colors in $themes {
+    @return map-get($colors, $key);
+  }
+}

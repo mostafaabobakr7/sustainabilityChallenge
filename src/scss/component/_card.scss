@@ -1,0 +1,56 @@
+.dashboard {
+  .cardQuestionNumber {
+    @include bg("secondary");
+    opacity: 0;
+    animation: zoomIn 0.7s forwards;
+  }
+
+  .cardUserNumber {
+    @include bg("secondary");
+    opacity: 0;
+    animation: zoomIn 0.7s forwards 0.5s;
+  }
+
+  .cardAssessNumber {
+    @include bg("secondary");
+    opacity: 0;
+    animation: zoomIn 0.7s forwards 0.7s;
+  }
+
+  .cardGroupsNumber {
+    @include bg("secondary");
+    opacity: 0;
+    animation: zoomIn 0.7s forwards 0.9s;
+  }
+
+  .card {
+    @include color("text");
+    border: none;
+    border-radius: 0.75rem;
+    margin: 8px 0;
+    @include box("text");
+
+    &-body {
+      h3 {
+        font-weight: 700;
+        position: relative;
+        display: inline-block;
+
+        &::after {
+          content: "";
+          background: color("radio");
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+        }
+      }
+
+      h2 {
+        font-weight: 100;
+        font-size: 2.8rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.ribbon {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+
+  & span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    transform: rotate(45deg);
+    width: 100px;
+    display: block;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 19px;
+    right: -21px;
+
+    &.Easy {
+      background: #79A70A;
+      background: linear-gradient(#F7F028 0%, #A7A217 100%);
+
+      &::before {
+        border-left: 3px solid #A7A217;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #A7A217
+      }
+
+      &::after {
+        border-left: 3px solid transparent;
+        border-right: 3px solid #A7A217;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #A7A217;
+      }
+    }
+
+    &.Intermediate {
+      background: #79A70A;
+      background: linear-gradient(#05EFF7 0%, #087F8F 100%);
+
+      &::before {
+        border-left: 3px solid #087F8F;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #087F8F;
+      }
+
+      &::after {
+        border-left: 3px solid transparent;
+        border-right: 3px solid #087F8F;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #087F8F;
+      }
+    }
+
+    &.Hard {
+      background: #79A70A;
+      background: linear-gradient(#F73C28 0%, #A71616 100%);
+
+      &::before {
+        border-left: 3px solid #A71616;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #A71616;
+      }
+
+      &::after {
+        border-left: 3px solid transparent;
+        border-right: 3px solid #A71616;
+        border-bottom: 3px solid transparent;
+        border-top: 3px solid #A71616;
+      }
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      z-index: -1;
+    }
+
+    &::before {
+      left: 0px;
+    }
+
+    &::after {
+      right: 0px;
+    }
+  }
+}

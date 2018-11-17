@@ -1,0 +1,63 @@
+<!-- settings gear -->
+<div class="settings dropdown">
+  <button
+    class="settings__btn "
+    type="button"
+    title="Change app setting"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+  >
+    @@include('./_settingSvg.html')
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item">
+      <small>Dark Theme</small>
+      <input type="checkbox" id="theme-toggle" class="switch" />
+      <label for="theme-toggle" class="switch__lbl" title="Theme color"></label>
+    </li>
+    <li class="dropdown-item dropdown-submenu">
+      <small>Language</small>
+      <button
+        class="settings__lang"
+        type="button"
+        id="dropdownMenuLangButton"
+        data-toggle="dropdown"
+      >
+        <img src="./img/languages/English.png" />English
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuLangButton">
+        <li>
+          <a class="dropdown-item" href="#en">
+            <img src="./img/languages/English.png" />English
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#de">
+            <img src="./img/languages/German.png" />German
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#fr">
+            <img src="./img/languages/Français.png" />Français
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#es">
+            <img src="./img/languages/Español.png" />Español
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#it">
+            <img src="./img/languages/Italiano.png" />Italiano
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item" href="#nl">
+            <img src="./img/languages/Nederlands.png" />Nederlands
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- settings gear end -->

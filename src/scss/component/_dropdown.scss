@@ -1,0 +1,54 @@
+.dropdown {
+  margin-bottom: 5px;
+
+  &-menu {
+    top: auto;
+    z-index: z(zDropdown);
+    @include bg("secondary");
+    @include box("text");
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+
+  &-item {
+    @include color("text");
+    display: block;
+    padding: 0.75rem 1.5rem;
+    & > small {
+      cursor: default;
+      margin-right: 3rem;
+      display: inline-block;
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+      @include bg("secondary");
+      @include color("text");
+      text-decoration: none;
+    }
+  }
+}
+
+// ---------------------
+li:hover > ul.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: -7rem;
+  left: 99%;
+  & .dropdown-item {
+    display: block;
+    &:hover {
+      @include bg("secondaryHover");
+    }
+    img {
+      margin-right: 6px;
+    }
+  }
+}
+
+// edit_survey add display logic end ------------

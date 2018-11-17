@@ -1,0 +1,36 @@
+@mixin center($x:-50%, $y:-50%) {
+  position: absolute;
+  top: -($y);
+  left: -($x);
+  transform: translate($x, $y);
+}
+
+@mixin center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin centerAdvaced($width: null, $height: null, $x:-50%, $y:-50%) {
+  position: absolute;
+  top: -($y);
+  left: -($x);
+  @if not $width and not $height {
+    transform: translate($x, $y);
+  }
+  @else if $width and $height {
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2);
+  }
+  @else if not $height {
+    width: $width;
+    margin-left: -($width / 2);
+    transform: translateY(-50%);
+  }
+  @else {
+    height: $height;
+    margin-top: -($height / 2);
+    transform: translateX(-50%);
+  }
+}

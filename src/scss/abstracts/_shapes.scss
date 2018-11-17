@@ -1,0 +1,198 @@
+// http://ilanbiala.github.io/CSS-Shapes/
+@mixin rectangle($width, $height, $color) {
+  width: $width;
+  height: $height;
+  background: $color;
+}
+
+@mixin parallelogram($width, $height, $skew, $color) {
+  @include rectangle($width, $height, $color);
+  transform: skew($skew);
+}
+
+@mixin square($size, $color) {
+  @include rectangle($size, $size, $color);
+}
+
+@mixin circle($size, $color) {
+  @include square($size, $color);
+  border-radius: $size / 2;
+}
+
+@mixin oval($width, $height, $color) {
+  width: $width;
+  height: $height;
+  border-radius: #{$width} / #{$height};
+  background: $color;
+}
+
+@mixin triangle($direction, $sizeH, $sizeV, $color) {
+  content: "";
+  position: absolute;
+  bottom: -0.7rem;
+  width: 0;
+  height: 0;
+  border-style: solid;
+
+  @if $direction == top {
+    border-width: 0 $sizeV $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottom {
+    border-width: $sizeV $sizeH 0 $sizeV;
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction == left {
+    border-width: $sizeV $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == right {
+    border-width: $sizeV 0 $sizeV $sizeH;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topright {
+    border-width: 0 $sizeH $sizeV 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction == bottomright {
+    border-width: 0 0 $sizeH $sizeV;
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction == bottomleft {
+    border-width: $sizeH 0 0 $sizeV;
+    border-color: transparent transparent transparent $color;
+  }
+  @if $direction == topleft {
+    border-width: $sizeH $sizeV 0 0;
+    border-color: $color transparent transparent transparent;
+  }
+}
+
+@mixin corner-triangle($corner, $size, $color) {
+  width: 0;
+  height: 0;
+  @if $corner== "top-left" {
+    &::after {
+      border-top: $size solid $color;
+      border-right: $size solid transparent;
+    }
+  } @else if $corner== "top-right" {
+    &::after {
+      border-top: $size solid $color;
+      border-left: $size solid transparent;
+    }
+  } @else if $corner== "bottom-left" {
+    &::after {
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+    }
+  } @else if $corner== "bottom-right" {
+    &::after {
+      border-bottom: $size solid $color;
+      border-left: $size solid transparent;
+    }
+  }
+}
+
+@mixin trapezoid($width, $color) {
+  width: $width;
+  height: 0;
+  border-right: $width / 2 solid transparent;
+  border-bottom: $width solid $color;
+  border-left: $width / 2 solid transparent;
+}
+
+@mixin chevron($direction, $width, $height, $skew, $color) {
+  position: relative;
+  width: $width;
+  height: $height;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: $color;
+    content: "";
+  }
+  &:before {
+    left: 0;
+    transform: skew(0deg, $skew);
+  }
+  &:after {
+    right: 0;
+    transform: skew(0deg, -$skew);
+  }
+}
+
+// ---------------ex----------------
+%rectangle {
+  @include rectangle(100px, 40px, red);
+}
+
+%parallelogram {
+  @include parallelogram(100px, 70px, 10deg, red);
+}
+
+%circle {
+  @include circle(100px, red);
+}
+
+%oval {
+  @include oval(100px, 50px, red);
+}
+
+%trapezoid {
+  @include trapezoid(80px, red);
+}
+
+// Equilateral triangles------------------------------
+%up-triangle {
+  @include triangle(top, 5px, 5px, red);
+}
+
+%down-triangle {
+  @include triangle(bottom, 5px, 5px, red);
+}
+
+%left-triangle {
+  @include triangle(left, 5px, 5px, red);
+}
+
+%right-triangle {
+  @include triangle(right, 5px, 5px, red);
+}
+
+// Corner triangles-----------------------------------
+%top-left-triangle {
+  @include corner-triangle(top-left, 5px, red);
+}
+
+%top-right-triangle {
+  @include corner-triangle(top-right, 5px, red);
+}
+
+%bottom-left-triangle {
+  @include corner-triangle(bottom-left, 5px, red);
+}
+
+%bottom-right-triangle {
+  @include corner-triangle(bottom-right, 5px, red);
+}
+
+// Chevrons----------------------------------------------
+%up-chevron {
+  @include chevron(120px, 40px, 20deg, red, up);
+}
+
+%down-chevron {
+  @include chevron(120px, 40px, 20deg, red, down);
+}
+
+%left-chevron {
+  @include chevron(120px, 40px, 20deg, red, left);
+}
+
+%right-chevron {
+  @include chevron(120px, 40px, 20deg, red, right);
+}

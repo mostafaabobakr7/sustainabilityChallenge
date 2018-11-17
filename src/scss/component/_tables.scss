@@ -1,0 +1,44 @@
+table {
+
+  // to solve bootstrap table-responsive not working
+  @include respond(phone) {
+    width: max-content !important;
+    max-width: none !important;
+  }
+}
+
+$groupViewNameWidth: 15rem;
+$groupActionsWidth: 17rem;
+
+.groupActions {
+  &>* {
+    margin: 0.5rem 0.4rem;
+    display: inline-block;
+  }
+}
+
+.groupViewName {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.assessmentAdd {
+  table thead td {
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  table thead td:last-child,
+  table tbody td:last-child {
+    border-left: 1px solid #dee2e6;
+  }
+}
+
+.groupMembersRow {
+  width: 67rem;
+
+  .groupMembersTag__wraper {
+    overflow: hidden;
+    height: 45px;
+  }
+}

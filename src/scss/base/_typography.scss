@@ -1,0 +1,220 @@
+// typography
+body {
+  font-family: "Nunito", Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  @include color("text");
+  font-size: 1.6rem;
+}
+
+.arabic {
+  font-family: "Tajawal" !important;
+  text-align: right;
+  direction: rtl;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+small {
+  @include color("text");
+}
+h1 {
+  font-weight: 700;
+  font-size: 6.5rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 5.5rem;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 3.2rem;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+h5 {
+  font-weight: 600;
+  font-size: 2.6rem;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+nav {
+  .nav-link {
+    font-weight: 600;
+  }
+}
+
+label.label {
+  font-size: 2.5rem;
+}
+small {
+  font-size: 1.7rem;
+}
+textarea {
+  font-weight: 500;
+  font-size: 3.2rem;
+  height: 6rem;
+}
+
+// typography end-----------------------
+/* nunito-200 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Nunito ExtraLight"), local("Nunito-ExtraLight"),
+    url("./fonts/nunito/nunito-v9-latin-200.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-200.woff") format("woff");
+}
+
+/* nunito-300 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Nunito Light"), local("Nunito-Light"),
+    url("./fonts/nunito/nunito-v9-latin-300.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-300.woff") format("woff");
+}
+
+/* nunito-regular - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Nunito Regular"), local("Nunito-Regular"),
+    url("./fonts/nunito/nunito-v9-latin-regular.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-regular.woff") format("woff");
+}
+
+/* nunito-600 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Nunito SemiBold"), local("Nunito-SemiBold"),
+    url("./fonts/nunito/nunito-v9-latin-600.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-600.woff") format("woff");
+}
+
+/* nunito-700 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Nunito Bold"), local("Nunito-Bold"),
+    url("./fonts/nunito/nunito-v9-latin-700.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-700.woff") format("woff");
+}
+
+/* nunito-800 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Nunito ExtraBold"), local("Nunito-ExtraBold"),
+    url("./fonts/nunito/nunito-v9-latin-800.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-800.woff") format("woff");
+}
+
+/* nunito-900 - latin */
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Nunito Black"), local("Nunito-Black"),
+    url("./fonts/nunito/nunito-v9-latin-900.woff2") format("woff2"),
+    url("./fonts/nunito/nunito-v9-latin-900.woff") format("woff");
+}
+
+/* tajawal-200 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 200;
+  src: local("Tajawal ExtraLight"), local("Tajawal-ExtraLight"),
+    url("./fonts/tajawal/tajawal-v1-arabic-200.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-200.woff") format("woff");
+}
+
+/* tajawal-300 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Tajawal Light"), local("Tajawal-Light"),
+    url("./fonts/tajawal/tajawal-v1-arabic-300.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-300.woff") format("woff");
+}
+
+/* tajawal-400 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Tajawal"), local("Tajawal-Regular"),
+    url("./fonts/tajawal/tajawal-v1-arabic-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-regular.woff") format("woff");
+}
+
+/* tajawal-500 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Tajawal Medium"), local("Tajawal-Medium"),
+    url("./fonts/tajawal/tajawal-v1-arabic-500.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-500.woff") format("woff");
+}
+
+/* tajawal-700 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Tajawal Bold"), local("Tajawal-Bold"),
+    url("./fonts/tajawal/tajawal-v1-arabic-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-700.woff") format("woff");
+}
+
+/* tajawal-800 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 800;
+  src: local("Tajawal ExtraBold"), local("Tajawal-ExtraBold"),
+    url("./fonts/tajawal/tajawal-v1-arabic-800.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-800.woff") format("woff");
+}
+
+/* tajawal-900 - arabic */
+@font-face {
+  font-family: "Tajawal";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Tajawal Black"), local("Tajawal-Black"),
+    url("./fonts/tajawal/tajawal-v1-arabic-900.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("./fonts/tajawal/tajawal-v1-arabic-900.woff") format("woff");
+}

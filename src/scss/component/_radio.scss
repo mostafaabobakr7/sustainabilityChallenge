@@ -1,0 +1,75 @@
+/* radio and checkbox style */
+$Radio-size: 22px;
+input[type="radio"],
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: $Radio-size;
+  width: $Radio-size;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+
+  & + label {
+    cursor: pointer;
+  }
+
+  &:hover {
+    background: #9faab7;
+  }
+
+  &:checked {
+    @include bg("radio");
+
+    & + label {
+      @include color("radio");
+    }
+  }
+
+  &:checked::before {
+    content: "\2713";
+    height: $Radio-size;
+    width: $Radio-size;
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: $Radio-size;
+  }
+
+  &:checked::after {
+    content: "";
+    @include bg("radio");
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+}
+
+input[type="checkbox"] {
+  border-radius: 2px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+
+  &::after {
+    border-radius: 50%;
+  }
+}
+
+/* radio and checkbox style end---- */

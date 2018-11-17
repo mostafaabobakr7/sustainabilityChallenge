@@ -1,0 +1,40 @@
+// https://www.cssportal.com/css-image-filters/
+%bw {
+  filter: grayscale(100%);
+}
+
+%blur {
+  filter: blur(3px);
+}
+
+%brighten {
+  filter: brightness(200%);
+}
+
+%contrast {
+  filter: contrast(200%);
+}
+
+%drop-shadow {
+  filter: drop-shadow(8px 8px 10px grey);
+}
+
+%hue {
+  filter: hue-rotate(90deg);
+}
+
+%invert {
+  filter: invert(100%);
+}
+
+%saturated {
+  filter: saturate(800%);
+}
+
+%sepia {
+  filter: sepia(100%);
+}
+
+%multiple {
+  filter: blur(2px) grayscale(0.5) opacity(0.8);
+}

@@ -1,0 +1,17 @@
+// editable
+[contenteditable="true"] {
+  padding: 0.2rem 0.3rem;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  &:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+  }
+}
+
+span[contenteditable="true"] {
+  display: inline-block;
+  font-size: 1.8rem;
+}
+
+// editable end

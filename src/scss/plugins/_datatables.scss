@@ -1,0 +1,190 @@
+/*!
+ * Vanilla-DataTables
+ * Licensed under MIT (https: //github.com/Mobius1/Vanilla-DataTables)
+ * Version: 1.6.15
+ */
+.dataTable-wrapper {
+  & .no-header .dataTable-container {
+    border-top: 1px solid #d9d9d9;
+  }
+
+  & .no-footer .dataTable-container {
+    border-bottom: 1px solid #d9d9d9;
+  }
+}
+
+.dataTable-top,
+.dataTable-bottom {
+  padding: 8px 10px;
+
+  &::after {
+    clear: both;
+    content: " ";
+    display: table;
+  }
+
+  &>div:first-child {
+    float: left;
+  }
+
+  &>div:last-child {
+    float: right;
+  }
+}
+
+.dataTable-selector {
+  padding: 6px;
+}
+
+.dataTable-input {
+  padding: 6px 12px;
+}
+
+.dataTable-info {
+  margin: 7px 0;
+}
+
+/* PAGER */
+.dataTable-pagination {
+  & ul {
+    margin: 0;
+    padding-left: 0;
+  }
+
+  & li {
+    list-style: none;
+    float: left;
+  }
+
+  & a {
+    border: 1px solid transparent;
+    float: left;
+    margin-left: 2px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    color: #333;
+  }
+
+  & a:hover {
+    background-color: #d9d9d9;
+  }
+
+  & .active a,
+  & .active a:focus,
+  & .active a:hover {
+    background-color: #d9d9d9;
+    cursor: default;
+  }
+
+  & .ellipsis a,
+  & .disabled a,
+  & .disabled a:focus,
+  & .disabled a:hover {
+    cursor: not-allowed;
+  }
+
+  & .disabled a,
+  & .disabled a:focus,
+  & .disabled a:hover {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  & .pager a {
+    font-weight: bold;
+  }
+}
+
+/* TABLE */
+.dataTable-table {
+  max-width: 100%;
+  width: 100%;
+  border-spacing: 0;
+
+  &>tbody>tr>td,
+  &>tbody>tr>th,
+  &>tfoot>tr>td,
+  &>tfoot>tr>th,
+  &>thead>tr>td,
+  &>thead>tr>th {
+    vertical-align: top;
+  }
+
+  &>thead>tr>th {
+    vertical-align: bottom;
+    text-align: left;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  &>tfoot>tr>th {
+    vertical-align: bottom;
+    text-align: left;
+    border-top: 1px solid #d9d9d9;
+  }
+
+  & th {
+    vertical-align: bottom;
+    text-align: left;
+  }
+
+  & th a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.dataTable-sorter {
+  display: inline-block;
+  height: 100%;
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    opacity: 0.2;
+    transition: opacity 0.1s;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &::before {
+    border-top: 4px solid #fff;
+    bottom: 10px;
+
+    .desc & {
+      border-top: 4px solid #FAC30A;
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    border-bottom: 4px solid #fff;
+    border-top: 4px solid transparent;
+    top: 0px;
+
+    .asc & {
+      border-bottom: 4px solid #FAC30A;
+      opacity: 1;
+    }
+  }
+
+  .asc &,
+  .desc & {
+    color: #FAC30A;
+  }
+}
+
+.dataTables-empty {
+  text-align: center;
+}

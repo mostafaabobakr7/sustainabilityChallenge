@@ -1,0 +1,15 @@
+// on hover change: COLOR
+@mixin hoverColor($bgcolor, $hovercolor) {
+  color: $bgcolor;
+  &:hover {
+    color: $hovercolor;
+  }
+}
+
+// on hover change: BACKGROUND
+@mixin hoverBg($bgcolor, $hovercolor) {
+  background: $bgcolor;
+  &:hover {
+    background: $hovercolor;
+  }
+}

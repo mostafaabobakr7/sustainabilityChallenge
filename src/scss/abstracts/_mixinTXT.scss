@@ -1,0 +1,28 @@
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    font-weight: $weight;
+    font-style: $style;
+    src: url($file-name + '.eot');
+    src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
+    url($file-name + '.woff') format('woff'),
+    url($file-name + '.ttf') format('truetype'),
+    url($file-name + '.svg##{$font-name}') format('svg');
+  }
+}
+
+// TXT-BOX on IMG
+@mixin txtBox {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: inline;
+}
+
+// Grediant txt
+@mixin txtGred ($start, $end) {
+  // backup color
+  color: $start;
+  background: linear-gradient(to right, $start, $end);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
