@@ -4,18 +4,19 @@
   &-menu {
     top: auto;
     z-index: z(zDropdown);
-    @include bg("secondary");
-    @include box("text");
+    @include bg("text");
+    @include box("textInverse");
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
   }
 
   &-item {
-    @include color("text");
+    @include color("textInverse");
     display: block;
     padding: 1rem 1.5rem;
     & > small {
       cursor: default;
+      @include color("textInverse");
       margin-right: 3rem;
       display: inline-block;
     }
@@ -23,8 +24,8 @@
     &:focus,
     &:active,
     &:hover {
-      @include bg("secondary");
-      @include color("text");
+      @include bg("text");
+      @include color("textInverse");
       text-decoration: none;
     }
   }
@@ -43,7 +44,7 @@ li:hover > ul.dropdown-menu {
   & .dropdown-item {
     display: block;
     &:hover {
-      @include bg("secondaryHover");
+      @include bg("secondaryHoverInverse");
     }
     img {
       margin-right: 6px;
