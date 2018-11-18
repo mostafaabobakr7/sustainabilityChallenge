@@ -3,6 +3,7 @@
 $themes: (
   "light": (
     "text": #333,
+    "textInverse": #acacac,
     "bg": linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%),
     "primary": #f8f8fa,
     "secondary": #fff,
@@ -11,6 +12,7 @@ $themes: (
   ),
   "dark": (
     "text": #acacac,
+    "textInverse": #333,
     "bg": linear-gradient(to top, #0e0e0e 0%, #101010 100%),
     "primary": #101010,
     "secondary": #1b1b1b,

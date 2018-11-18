@@ -34,8 +34,11 @@
       h3 {
         font-weight: 700;
         position: relative;
-        display: inline-block;
-
+        @include color("textInverse");
+        @include bg("radio");
+        margin: -1.25rem -1.25rem 0.75rem -1.25rem;
+        border-radius: 0.75rem 0.75rem 0 0;
+        text-align: center;
         &::after {
           content: "";
           background: color("radio");
