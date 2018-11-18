@@ -1,5 +1,6 @@
 $side-nav-width: 20rem;
-$page-wrapper-margin-left: 21rem;
+$side-nav-height: 10rem;
+$page-wrapper-margin: 21rem;
 
 .main-wrapper {
   width: 100%;
@@ -14,55 +15,24 @@ $page-wrapper-margin-left: 21rem;
   flex-direction: column;
   width: $side-nav-width;
   height: 100vh;
-}
-
-.searchQuestions {
-  @include media(min, 992) {
-    position: sticky;
-    top: 0;
-    min-height: 88px;
-  }
-
-  z-index: z(zSearchQuestions);
-
-  & > div {
-    margin-left: $page-wrapper-margin-left;
-  }
-}
-
-.questioncontrols {
-  z-index: z(zControlQuestions);
-
-  &__content {
-    margin-left: $page-wrapper-margin-left;
-  }
+  @include color("text");
+  @include box("text", $x: -3, $y: 0, $blur: 10);
 }
 
 .page-wrapper {
-  margin-right: $page-wrapper-margin-left;
+  margin-right: $page-wrapper-margin;
   min-height: 100vh;
 }
-
-@include respond(tab-port) {
+@include media(max, 900) {
   .side-nav {
-    width: 0;
-    opacity: 0;
-    display: none;
+    @include box("text", $x: 0, $y: 3, $blur: 10, $op: 0.3);
+    top: 0;
+    flex-direction: row;
+    width: 100vw;
+    height: $side-nav-height;
   }
-
-  .questioncontrols {
-    &__content {
-      margin-left: 0;
-    }
-  }
-
   .page-wrapper {
-    margin-left: 0;
-  }
-
-  .searchQuestions {
-    & > div {
-      margin-left: 0;
-    }
+    margin-right: 0;
+    margin-top: $side-nav-height;
   }
 }

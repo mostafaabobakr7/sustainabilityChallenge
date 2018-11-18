@@ -25,7 +25,8 @@ $themes: (
   $x: 1,
   $y: 3,
   $blur: 5,
-  $spred: 0
+  $spred: 0,
+  $op: 0.1
 ) {
   // Iterate over the themes
   @each $theme, $colors in $themes {
@@ -37,7 +38,7 @@ $themes: (
           #{$y}px
           #{$blur}px
           #{$spred}px
-          rgba(map-get($colors, $key), 0.1);
+          rgba(map-get($colors, $key), $op);
       }
       #{$property}: map-get($colors, $key);
     }

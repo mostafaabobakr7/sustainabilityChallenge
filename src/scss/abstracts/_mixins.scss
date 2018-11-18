@@ -16,26 +16,27 @@
 // > general layout + grid
 // > page layout
 // > components
+// +1800 < 📺       || big-desktop
+// 900 < 💻 < 1200  || tab-land
+// 600 < 🖥 < 900   || tab-land
+// 📱 < 600         || phone
+
 @mixin respond($breakpoint) {
-  // +1800 < 📺
   @if $breakpoint==big-desktop {
     @media (min-width: 112.5em) {
       @content;
     }
-  } //900 < 💻 < 1200
-
+  }
   @if $breakpoint==tab-land {
     @media (max-width: 75em) {
       @content;
     }
-  } //600 < 🖥 < 900
-
+  }
   @if $breakpoint==tab-port {
     @media (max-width: 56.25em) {
       @content;
     }
-  } // 📱 < 600
-
+  }
   @if $breakpoint==phone {
     @media (max-width: 37.5em) {
       @content;

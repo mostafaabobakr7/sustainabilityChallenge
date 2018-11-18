@@ -2,25 +2,25 @@
   .cardQuestionNumber {
     @include bg("secondary");
     opacity: 0;
-    animation: zoomIn 0.7s forwards;
+    animation: fadeIn 0.7s forwards;
   }
 
   .cardUserNumber {
     @include bg("secondary");
     opacity: 0;
-    animation: zoomIn 0.7s forwards 0.5s;
+    animation: fadeIn 0.7s forwards 0.5s;
   }
 
   .cardAssessNumber {
     @include bg("secondary");
     opacity: 0;
-    animation: zoomIn 0.7s forwards 0.7s;
+    animation: fadeIn 0.7s forwards 0.7s;
   }
 
   .cardGroupsNumber {
     @include bg("secondary");
     opacity: 0;
-    animation: zoomIn 0.7s forwards 0.9s;
+    animation: fadeIn 0.7s forwards 0.9s;
   }
 
   .card {
