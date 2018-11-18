@@ -2,18 +2,18 @@
 // https://www.sitepoint.com/sass-theming-neverending-story/
 $themes: (
   "light": (
-    "text": #333,
-    "textInverse": #acacac,
     "bg": linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%),
+    "text": #333,
+    "textInverse": #dee2e6,
     "primary": #f8f8fa,
     "secondary": #fff,
     "secondaryHover": #e7e7e7,
     "radio": #764ba2
   ),
   "dark": (
-    "text": #acacac,
-    "textInverse": #333,
     "bg": linear-gradient(to top, #0e0e0e 0%, #101010 100%),
+    "text": #acacac,
+    "textInverse": #1b1b1b,
     "primary": #101010,
     "secondary": #1b1b1b,
     "secondaryHover": #252525,
