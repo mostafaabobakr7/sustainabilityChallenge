@@ -10,4 +10,3 @@ function countNum() {
   });
 }
 
-$('.dashboard .card-body h3').each(countNum);
