@@ -29,27 +29,18 @@
     border-radius: 0.75rem;
     margin: 8px 0;
     @include box("text");
-
-    &-body {
+    &-header {
+      @include bg("radio");
+      border-radius: 0.75rem 0.75rem 0 0;
+      padding: 0;
+      border-bottom: 0;
       h3 {
         font-weight: 700;
-        position: relative;
-        @include color("textInverse");
-        @include bg("radio");
-        margin: -1.25rem -1.25rem 0.75rem -1.25rem;
-        border-radius: 0.75rem 0.75rem 0 0;
         text-align: center;
-        &::after {
-          content: "";
-          background: color("radio");
-          width: 100%;
-          height: 3px;
-          position: absolute;
-          left: 0;
-          bottom: -2px;
-        }
+        @include color("textInverse");
       }
-
+    }
+    &-body {
       h2 {
         font-weight: 100;
         font-size: 2.8rem;
