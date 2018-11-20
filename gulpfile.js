@@ -3,6 +3,8 @@
 const htmlclean = require('gulp-htmlclean');
 const fileinclude = require('gulp-file-include');
 const imagemin = require('gulp-imagemin');
+const realFavicon = require ('gulp-real-favicon');
+const fs = require('fs');
 // css
 const gulp = require('gulp');
 const sass = require('gulp-sass');

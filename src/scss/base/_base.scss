@@ -17,18 +17,18 @@ html {
   this leads to 1 rem = 62.5% of 16px = 10px to could make every font and size with rem and this is for easy responsive */
   font-size: 62.5%;
 
+  //want: 1rem = 12px, 12/16px(base) = 75%
+  //want: 1rem = 9px, 9/16px(base) = 56.25%
+  //want: 1rem = 8px, 8/16px(base) = 50%
   @include respond(big-desktop) {
-    //want: 1rem = 12px, 12/16px(base) = 75%
     font-size: 75%;
   }
 
   @include respond(tab-land) {
-    //want: 1rem = 9px, 9/16px(base) = 56.25%
     font-size: 56.25%;
   }
 
   @include respond(tab-port) {
-    //want: 1rem = 8px, 8/16px(base) = 50%
     font-size: 55%;
   }
 }
@@ -44,13 +44,13 @@ body {
   @include bg("primary");
 }
 
-::placeholder,
-::-webkit-input-placeholder,
-::-moz-placeholder {
-  // color: #ddd;
-  color: red !important;
-  font-weight: 400;
-}
+// ::placeholder,
+// ::-webkit-input-placeholder,
+// ::-moz-placeholder {
+//   // color: #ddd;
+//   color: red !important;
+//   font-weight: 400;
+// }
 
 ul li {
   list-style: none !important;
