@@ -91,7 +91,7 @@
   <meta name="twitter:site" content="" />
   <meta name="twitter:title" content="" />
   <meta name="twitter:description" content="" />
-  <meta name="twitter:image" content="./img/icons/logo.png" />
+  <meta name="twitter:image" content="./img/icons/og-image.jpg" />
   <meta name="twitter:creator" content="" />
   <meta name="twitter:card" content="" />
   <!-- style -->
@@ -101,6 +101,13 @@
     media="screen"
     href="./css/style.css"
   />
+  <!-- loader -->
+  <script>
+    window.addEventListener("load", function() {
+      const loader = document.querySelector(".loader");
+      loader.className += " hidden";
+    });
+  </script>
 </head>
 
 

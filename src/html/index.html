@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   @@include('./templates/_meta.html', {"title": "Home"})
-
   <body class="theme-light">
+    @@include('./templates/_loader.html')
     <main class="main-wrapper">
       @@include('./templates/_sideNav.html')
       <div class="page-wrapper dashboard">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-xl-6">
               @@include('./templates/_card.html', {"class":"cardQuestionNumber",
               "number":"Demand", "txt":"body"})
             </div>
-            <div class="col-sm-6">
+            <div class="col-xl-6">
               @@include('./templates/_card.html', {"class":"cardUserNumber",
               "number":"Production", "txt":"body"})
             </div>
-            <div class="col-sm-6">
+            <div class="col-xl-6">
               @@include('./templates/_card.html', {"class":"cardAssessNumber",
               "number":"Marketing", "txt":"body"})
             </div>
-            <div class="col-sm-6">
+            <div class="col-xl-6">
               @@include('./templates/_card.html', {"class":"cardGroupsNumber",
               "number":"Adminstration", "txt":"body"})
             </div>

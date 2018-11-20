@@ -27,7 +27,7 @@ function changeTheme(){
 }
 
 $(document).on('change', '#theme-toggle',changeTheme);
-// add class rotated to setting gear
+// ADD CLASS ROTATED TO SETTING GEAR
 $('.settings__btn').on('click', function(){
   if ($(this).hasClass('rotate')){
     $(this).removeClass('rotate');
