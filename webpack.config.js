@@ -1,8 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// eslint-disable-next-line prefer-destructuring
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   devtool: 'source-map',
   entry: './src/js/components/script.js',
@@ -14,8 +15,11 @@ module.exports = {
     new UglifyJsPlugin({
       sourceMap: true,
       uglifyOptions: {
+        exclude: [/\.min\.js$/gi], // skip pre-minified libs
+        mangle: true,
+        ie8: false,
         compress: {
-          warnings: false, // Suppress uglification warnings
+          warnings: false,
           pure_getters: true,
           unsafe: true,
           unsafe_comps: true,
@@ -23,8 +27,6 @@ module.exports = {
         output: {
           comments: false,
         },
-        ie8: false,
-        exclude: [/\.min\.js$/gi] // skip pre-minified libs
       },
     }),
     new CompressionPlugin({

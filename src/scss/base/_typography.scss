@@ -34,12 +34,12 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 3.2rem;
 }
 
 h4 {
-  font-weight: 700;
+  font-weight: 500;
   font-size: 3rem;
 }
 
@@ -74,6 +74,7 @@ textarea {
 // typography end-----------------------
 /* nunito-200 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 200;
@@ -84,6 +85,7 @@ textarea {
 
 /* nunito-300 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 300;
@@ -94,6 +96,7 @@ textarea {
 
 /* nunito-regular - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
@@ -104,6 +107,7 @@ textarea {
 
 /* nunito-600 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 600;
@@ -114,6 +118,7 @@ textarea {
 
 /* nunito-700 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 700;
@@ -124,6 +129,7 @@ textarea {
 
 /* nunito-800 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 800;
@@ -134,6 +140,7 @@ textarea {
 
 /* nunito-900 - latin */
 @font-face {
+  font-display: swap;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 900;
@@ -144,6 +151,7 @@ textarea {
 
 /* tajawal-200 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 200;
@@ -155,6 +163,7 @@ textarea {
 
 /* tajawal-300 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 300;
@@ -166,6 +175,7 @@ textarea {
 
 /* tajawal-400 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 400;
@@ -177,6 +187,7 @@ textarea {
 
 /* tajawal-500 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 500;
@@ -188,6 +199,7 @@ textarea {
 
 /* tajawal-700 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 700;
@@ -199,6 +211,7 @@ textarea {
 
 /* tajawal-800 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 800;
@@ -210,6 +223,7 @@ textarea {
 
 /* tajawal-900 - arabic */
 @font-face {
+  font-display: swap;
   font-family: "Tajawal";
   font-style: normal;
   font-weight: 900;

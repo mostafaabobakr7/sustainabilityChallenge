@@ -1,53 +1,38 @@
 // include plug-ins:
+// SERVE: BrowserSync
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 // html + img
+const nunjucks = require('gulp-nunjucks');
+const data = require('gulp-data');
 const htmlclean = require('gulp-htmlclean');
-const fileinclude = require('gulp-file-include');
 const imagemin = require('gulp-imagemin');
-const realFavicon = require ('gulp-real-favicon');
-const fs = require('fs');
 // css
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const sassnewer = require('gulp-newer-sass');
 const sassGlob = require('gulp-sass-glob');
 const autoprefixer = require('autoprefixer');
 const sourcemaps = require('gulp-sourcemaps');
-const cleanCSS = require('gulp-clean-css');
-const concatCss = require('gulp-concat-css');
-const concat = require('gulp-concat');
 const cssnano = require('cssnano');
 const postcss = require('gulp-postcss');
-const uncss = require('gulp-uncss');
 const postcssPresetEnv = require('postcss-preset-env');
 const fontMagician = require('postcss-font-magician');
 const colorfunction = require('postcss-color-function');
 const rgbafallback = require('postcss-color-rgba-fallback');
 const easingradients = require('postcss-easing-gradients');
+// other
+const fs = require('fs');
+const path = require('path');
+const size = require('gulp-size');
+const gzip = require('gulp-gzip');
+const newer = require('gulp-newer');
+const plumber = require('gulp-plumber');
 // js
-const uglify = require('gulp-uglify-es').default;
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const babel = require('gulp-babel');
-const babelenv = require('babel-preset-env');
-const browserify = require('browserify');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-// other
-const merge = require('merge-stream');
-const rename = require('gulp-rename');
-const runSequence = require('run-sequence');
-const browserSync = require('browser-sync').create();
-const newer = require('gulp-newer');
-const size = require('gulp-size');
-const plumber = require('gulp-plumber');
-const gzip = require('gulp-gzip');
-const pump = require('pump');
-const gulpIgnore = require('gulp-ignore');
-const del = require('del');
 const webpackConfig = require('./webpack.config.js');
 // src and build :
-const htmlSrc = './src/html/**/*.html';
+const htmlSrc = './src/html/**/*';
 const htmlDest = './';
 const sassSrc = './src/scss/**/*.scss';
 const sassDest = './src/css';
@@ -58,9 +43,15 @@ const jsFolder = './src/js/components/**/*.js';
 const jsDest = './js/';
 const imgSrc = './src/img/*';
 const imgDest = './img';
-// functions
+// ERROR function
+function swallowError (error) {
+  console.log(error.toString());
+  this.emit('end');
+}
 function serverStart() {
-  browserSync.init({ server: './src', });
+  browserSync.init({
+    server: './src',
+  });
 }
 
 function minifySass() {
@@ -86,18 +77,15 @@ function minifySass() {
     .pipe(browserSync.stream());
 }
 
-
+function getHtmlData(){
+  return JSON.parse(fs.readFileSync('./src/data.json'));
+}
 function minifyHtml() {
   return gulp
     .src('./src/html/*.html')
-    .pipe(plumber(function (error) {
-      console.error('ERROR', error.message);
-      gulp.emit('finish');
-    }))
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file',
-    }))
+    .pipe(data(getHtmlData))
+    .pipe(nunjucks.compile())
+    .on('error', swallowError)
     .pipe(gulp.dest('./src/'))
     // .pipe(newer(htmlDest))
     .pipe(htmlclean({
@@ -114,6 +102,7 @@ function minifyJs() {
   return gulp
     .src(jsSrc)
     .pipe(webpackStream(webpackConfig), webpack)
+    .on('error', swallowError)
     .pipe(gulp.dest('./src/js/'))
     .pipe(gulp.dest('./js/'))
     .pipe(size({
@@ -135,6 +124,7 @@ function minifyImg() {
     }))
     .pipe(newer(imgDest))
     .pipe(imagemin())
+    .on('error', swallowError)
     .pipe(gulp.dest(imgDest))
     .pipe(browserSync.stream());
 }
@@ -142,17 +132,18 @@ function minifyImg() {
 gulp.task('html', minifyHtml);
 gulp.task('minify-img', minifyImg);
 gulp.task('sass', minifySass);
-gulp.task('serve', ['sass',], serverStart);
+gulp.task('serve', serverStart);
 gulp.task('scripts', minifyJs);
 // watch .....................................
 
 
 function watchChange() {
-  gulp.watch(sassSrc, ['sass',]);
-  gulp.watch(jsFolder, ['scripts',]);
-  gulp.watch(imgSrc, ['minify-img',]);
-  gulp.watch(htmlSrc, ['html',]);
+  gulp.watch(sassSrc, ['sass',reload]);
+  gulp.watch(jsFolder, ['scripts',reload]);
+  gulp.watch(imgSrc, ['minify-img',reload]);
+  gulp.watch(htmlSrc, ['html',reload]);
+  gulp.watch('./src/data.json', ['html',reload]);
 }
 
-gulp.task('default', ['html', 'minify-img', 'scripts', 'serve',], watchChange);
+gulp.task('default', ['html', 'minify-img', 'scripts', 'sass', 'serve',], watchChange);
 // ...............................................................

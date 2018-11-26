@@ -12,6 +12,7 @@ import './layout/_inputUpload';
 import './layout/_modal';
 import './layout/_countNum';
 
+// import FlipDown from './plugins/flipdown';
 // import DataTable from './plugins/dataTables';
 // import Draggabilly from './plugins/draggability';
 
@@ -39,4 +40,6 @@ $('.dropdown-submenu .dropdown-item').on('click', function(){
   const value = $(this).html();
   $('.settings__lang').html(value);
 });
+// counter
+// const count = new FlipDown(1538137672).start();
 // #endregion

@@ -1,0 +1,6 @@
+{# imgs from data.json this is an ex #}
+{% for image in images %}
+<div class="gallery__item">
+  <img src="{{image.src}}" alt="{{image.alt}}">
+</div>
+{% endfor %}

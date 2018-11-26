@@ -15,11 +15,11 @@ html {
   text-rendering: optimizeLegibility;
   /* defines 1 rem = 62.5% of browser default rem which is 16px
   this leads to 1 rem = 62.5% of 16px = 10px to could make every font and size with rem and this is for easy responsive */
+  //want: 1rem = 12px => 12/16px(base) = 75%     | @(big-desktop)
+  //want: 1rem = 10px => 10/16px(base) = 62.5%   | @(desktop)
+  //want: 1rem = 9px  => 9/16px(base) = 56.25%   | @(tab-land)
+  //want: 1rem = 8px  => 8/16px(base) = 50%      | @(tab-port)
   font-size: 62.5%;
-
-  //want: 1rem = 12px, 12/16px(base) = 75%
-  //want: 1rem = 9px, 9/16px(base) = 56.25%
-  //want: 1rem = 8px, 8/16px(base) = 50%
   @include respond(big-desktop) {
     font-size: 75%;
   }
@@ -38,6 +38,17 @@ body {
   transition: all 700ms $cubic;
   @include bg("primary");
 }
+// ::-webkit-scrollbar {
+//   width: 10px;
+//   height: 2px;
+// }
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: color("radio");
+//   border-radius: 5px;
+// }
 
 ::selection {
   @include color("text");

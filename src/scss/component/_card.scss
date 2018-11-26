@@ -1,29 +1,23 @@
-.dashboard {
-  .cardQuestionNumber {
-    @include bg("secondary");
-    opacity: 0;
+.home {
+  .demand {
     animation: fadeIn 0.7s forwards;
   }
 
-  .cardUserNumber {
-    @include bg("secondary");
-    opacity: 0;
+  .production {
     animation: fadeIn 0.7s forwards 0.5s;
   }
 
-  .cardAssessNumber {
-    @include bg("secondary");
-    opacity: 0;
+  .marketing {
     animation: fadeIn 0.7s forwards 0.7s;
   }
 
-  .cardGroupsNumber {
-    @include bg("secondary");
-    opacity: 0;
+  .adminstration {
     animation: fadeIn 0.7s forwards 0.9s;
   }
 
   .card {
+    opacity: 0;
+    @include bg("secondary");
     @include color("text");
     border: none;
     border-radius: 0.75rem;
@@ -35,6 +29,7 @@
       padding: 0;
       border-bottom: 0;
       h3 {
+        @extend %headertxt;
         font-weight: 700;
         text-align: center;
         @include color("textInverse");
@@ -42,8 +37,19 @@
     }
     &-body {
       h2 {
-        font-weight: 100;
+        @extend %headertxt;
+        font-weight: 600;
         font-size: 2.8rem;
+      }
+      h3 {
+        @extend %headertxt;
+        font-weight: 300;
+        font-size: 2.3rem;
+      }
+      h4 {
+        @extend %headertxt;
+        font-weight: 100;
+        font-size: 2rem;
       }
     }
   }
