@@ -2,6 +2,26 @@
   <div class="card-header"><h3 class="">Marketing</h3></div>
   <div class="card-body">
     <h2>Selling price</h2>
+    <div class="Bb sellingPrice">
+      <input type="radio" name="sellingPrice" id="sellingPrice-5">
+      <label for="sellingPrice-5">
+        {% include '../svg/chart_down.html' %}
+        <span>-5%</span>
+      </label>
+      <input type="radio" name="sellingPrice" id="sellingPrice0">
+      <label for="sellingPrice0">
+        {% include '../svg/equal.html' %}
+        <span>0%</span>
+      </label>
+      <input type="radio" name="sellingPrice" id="sellingPrice5">
+      <label for="sellingPrice5">
+        {% include '../svg/chart_up.html' %}
+        <span>5%</span>
+      </label>
+       <div>
+        <canvas id="chart3" height="100"></canvas>
+      </div>
+    </div>
     <h2>Promotion</h2>
     <h2>Promotion (% of sales)</h2>
     <h3>P.R</h3>
@@ -9,5 +29,19 @@
     <h2>Advertising (% of sales)</h2>
     <h3>CSR</h3>
     <h2>Accounts receivable (days)</h2>
+    <div class="accountsReceivable">
+      <input type="radio" name="accountsReceivable" id="accountsReceivable30">
+      <label for="accountsReceivable30">
+        {% include '../svg/calender_30.html' %}
+      </label>
+      <input type="radio" name="accountsReceivable" id="accountsReceivable60">
+      <label for="accountsReceivable60">
+        {% include '../svg/calender_60.html' %}
+      </label>
+      <input type="radio" name="accountsReceivable" id="accountsReceivable90">
+      <label for="accountsReceivable90">
+        {% include '../svg/calender_90.html' %}
+      </label>
+    </div>
   </div>
 </section>

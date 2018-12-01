@@ -2,7 +2,41 @@
   <div class="card-header"><h3 class="">Production</h3></div>
   <div class="card-body">
     <h2>Production capacity increase</h2>
+    <div class="Bb productionCapacityIncrease">
+      <input type="radio" name="productionCapacityIncrease" id="productionCapacityIncrease0">
+      <label for="productionCapacityIncrease0">
+        {% include '../svg/equal.html' %}
+        <span>0%</span>
+      </label>
+      <input type="radio" name="productionCapacityIncrease" id="productionCapacityIncrease1">
+      <label for="productionCapacityIncrease1">
+        {% include '../svg/chart_up.html' %}
+        <span>+1000%</span>
+      </label>
+      <input type="radio" name="productionCapacityIncrease" id="productionCapacityIncrease3">
+      <label for="productionCapacityIncrease3">
+        {% include '../svg/chart_up.html' %}
+        <span>+3000%</span>
+      </label>
+    </div>
     <h2>Level of capacity utilisation</h2>
+    <div class=" Bb LevelOfCapacityUtilisation">
+      <input type="radio" name="LevelOfCapacityUtilisation" id="LevelOfCapacityUtilisation0">
+      <label for="LevelOfCapacityUtilisation0">
+        {% include '../svg/Factory_1.html' %}
+        <span>90%</span>
+      </label>
+      <input type="radio" name="LevelOfCapacityUtilisation" id="LevelOfCapacityUtilisation1">
+      <label for="LevelOfCapacityUtilisation1">
+        {% include '../svg/Factory_2.html' %}
+        <span>Optimum</span>
+      </label>
+      <input type="radio" name="LevelOfCapacityUtilisation" id="LevelOfCapacityUtilisation3">
+      <label for="LevelOfCapacityUtilisation3">
+        {% include '../svg/Factory_3.html' %}
+        <span>Maximum</span>
+      </label>
+    </div>
     <h4>Production unit coast</h4>
     <h4>Unsold products</h4>
   </div>

@@ -4,4 +4,10 @@
   user-select: none;
   pointer-events: none;
 }
+.Bb {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid;
+  @include bordercolor("secondaryHover");
+}
 // addClass end

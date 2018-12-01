@@ -3,6 +3,37 @@
   <div class="card-body">
     <h2>Licence fee (% sales revenue)</h2>
     <h2>Accounts payable (days)</h2>
+    <div class="Bb accountsPayable">
+      <input type="radio" name="accountsPayable" id="accountsPayable30">
+      <label for="accountsPayable30">
+        {% include '../svg/calender_30.html' %}
+      </label>
+      <input type="radio" name="accountsPayable" id="accountsPayable60">
+      <label for="accountsPayable60">
+        {% include '../svg/calender_60.html' %}
+      </label>
+      <input type="radio" name="accountsPayable" id="accountsPayable90">
+      <label for="accountsPayable90">
+        {% include '../svg/calender_90.html' %}
+      </label>
+    </div>
     <h2>HSE budget</h2>
+    <div class="HSEbudget">
+          <input type="radio" name="HSEbudget" id="HSEbudget1">
+      <label for="HSEbudget1">
+        {% include '../svg/Money_1.html' %}
+        <span>100.000</span>
+      </label>
+      <input type="radio" name="HSEbudget" id="HSEbudget2">
+      <label for="HSEbudget2">
+        {% include '../svg/Money_2.html' %}
+        <span>200.000</span>
+      </label>
+      <input type="radio" name="HSEbudget" id="HSEbudget3">
+      <label for="HSEbudget3">
+        {% include '../svg/Money_3.html' %}
+        <span>300.000</span>
+      </label>
+    </div>
   </div>
 </section>

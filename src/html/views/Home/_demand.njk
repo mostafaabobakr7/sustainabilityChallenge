@@ -2,6 +2,57 @@
   <div class="card-header"><h3 class="">Demand</h3></div>
   <div class="card-body">
     <h2>Forcasted deman growth</h2>
+    <div class="Bb demandGrowth">
+      <input type="radio" name="demandGrowth" id="demandGrowth-3">
+      <label for="demandGrowth-3">
+        {% include '../svg/chart_down.html' %}
+        <span>-3%</span>
+      </label>
+      <input type="radio" name="demandGrowth" id="demandGrowth0">
+      <label for="demandGrowth0">
+        {% include '../svg/equal.html' %}
+        <span>0%</span>
+      </label>
+      <input type="radio" name="demandGrowth" id="demandGrowth3">
+      <label for="demandGrowth3">
+        {% include '../svg/chart_up.html' %}
+        <span>3%</span>
+      </label>
+      <input type="radio" name="demandGrowth" id="demandGrowth6">
+      <label for="demandGrowth6">
+        {% include '../svg/chart_up.html' %}
+        <span>6%</span>
+      </label>
+      <input type="radio" name="demandGrowth" id="demandGrowth9">
+      <label for="demandGrowth9">
+        {% include '../svg/chart_up.html' %}
+        <span>9%</span>
+      </label>
+      <div>
+        <canvas id="chart1" height="100"></canvas>
+      </div>
+    </div>
+    {# forcastedDemanGrowth #}
     <h2>Forcasted market share growth</h2>
+    <div class="forcastedDemanGrowth">
+      <input type="radio" name="forcastedDemanGrowth" id="forcastedDemanGrowth-5">
+      <label for="forcastedDemanGrowth-5">
+        {% include '../svg/chart_down.html' %}
+        <span>-5%</span>
+      </label>
+      <input type="radio" name="forcastedDemanGrowth" id="forcastedDemanGrowth0">
+      <label for="forcastedDemanGrowth0">
+        {% include '../svg/equal.html' %}
+        <span>0%</span>
+      </label>
+      <input type="radio" name="forcastedDemanGrowth" id="forcastedDemanGrowth5">
+      <label for="forcastedDemanGrowth5">
+        {% include '../svg/chart_up.html' %}
+        <span>5%</span>
+      </label>
+      <div>
+        <canvas id="chart2" height="100"></canvas>
+      </div>
+    </div>
   </div>
 </section>

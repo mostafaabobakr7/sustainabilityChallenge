@@ -7,5 +7,59 @@
     box-shadow: none;
   }
 }
+.card input {
+  display: none;
+}
+.card input:checked + label {
+  @include bg("secondaryHover");
+}
+.card input:not(:checked) + label:hover {
+  cursor: pointer;
+  @include bordercolor("secondaryHover");
+}
 
+.card label {
+  text-align: center;
+  height: 8rem;
+  border: 1px solid;
+  @include bordercolor("secondaryHover");
+  border-radius: 2px;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+  &:hover svg {
+    opacity: 1;
+  }
+  & svg {
+    width: 4rem;
+    height: 4rem;
+    opacity: 0.8;
+    transition: all 0.2s ease-in-out;
+    @include fill("text");
+    &.svg {
+      &__equal {
+        fill: blue;
+        & + span {
+          color: blue;
+        }
+      }
+      &__chart {
+        &-up {
+          fill: green;
+          & + span {
+            color: green;
+          }
+        }
+        &-down {
+          fill: red;
+          & + span {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+  & span {
+    display: block;
+  }
+}
 // btn component end---------------------

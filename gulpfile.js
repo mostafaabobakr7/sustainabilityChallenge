@@ -4,6 +4,7 @@ const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 // html + img
 const nunjucks = require('gulp-nunjucks');
+const nunjucksRender = require('gulp-nunjucks-render');
 const data = require('gulp-data');
 const htmlclean = require('gulp-htmlclean');
 const imagemin = require('gulp-imagemin');
@@ -84,10 +85,10 @@ function minifyHtml() {
   return gulp
     .src('./src/html/*.html')
     .pipe(data(getHtmlData))
-    .pipe(nunjucks.compile())
+    // .pipe(nunjucks.compile())
+    .pipe(nunjucksRender({path: './src/html'}))
     .on('error', swallowError)
     .pipe(gulp.dest('./src/'))
-    // .pipe(newer(htmlDest))
     .pipe(htmlclean({
       protect: /<!--%fooTemplate\b.*?%-->/g,
       edit(html) {
