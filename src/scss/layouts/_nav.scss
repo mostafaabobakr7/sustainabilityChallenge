@@ -1,0 +1,67 @@
+/* navigation */
+/* navigation */
+// Both nav top + side
+.nav {
+  @include bg("secondary");
+  @include color("text");
+  @include box("text", $x: -3, $y: 3, $blur: 5);
+  // nav-top
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    &:hover img {
+      filter: grayscale(0%);
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      a {
+        display: block;
+        img {
+          height: 7rem;
+          filter: grayscale(100%);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 600;
+      }
+    }
+  }
+  // nav-side
+  &-side {
+    display: flex;
+    flex-direction: column;
+    @include media(max, 900) {
+      flex-direction: row;
+    }
+    &__content {
+      &:not(:first-child) {
+        display: flex;
+        justify-content: space-between;
+      }
+      p {
+        opacity: 0.8;
+        font-weight: 800;
+        margin: 0;
+      }
+      &.one {
+        text-align: center;
+        .flipdown {
+          font-size: 4.4rem;
+          font-weight: 800;
+        }
+      }
+      &.two {
+      }
+      &.three {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+/* navigation end-------------------------------------- */

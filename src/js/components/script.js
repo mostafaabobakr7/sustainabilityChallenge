@@ -8,22 +8,19 @@ import './layout/_waves';
 import './layout/_sideNav';
 import './layout/_dropdown';
 import './layout/_pagination';
-import './layout/_inputUpload';
 import './layout/_modal';
 import './layout/_countNum';
 import charts from './layout/chartjs.init';
-
-
-// import DataTable from './plugins/dataTables';
-// import Draggabilly from './plugins/draggability';
+// https://github.com/hilios/jQuery.countdown
+import 'jquery-countdown';
 
 // #region GLOBAL
 function changeTheme(){
   if ($('#theme-toggle').is(':checked')) {
-    $('body').removeClass();
+    $('body').removeClass('theme-light');
     $('body').addClass('theme-dark');
   } else {
-    $('body').removeClass();
+    $('body').removeClass('theme-dark');
     $('body').addClass('theme-light');
   }
 }
@@ -41,6 +38,12 @@ $('.dropdown-submenu .dropdown-item').on('click', function(){
   const value = $(this).html();
   $('.settings__lang').html(value);
 });
-charts();
+// charts();
+$('#flipdown').countdown('2019/01/01', function(event) {
+  $(this).html(event.strftime('%H:%M:%S'));
+});
 // counter
-// #endregion
+// #endregion.
+
+
+

@@ -3,7 +3,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // eslint-disable-next-line prefer-destructuring
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
   entry: './src/js/components/script.js',
@@ -12,6 +12,7 @@ module.exports = {
     filename: 'app.js',
   },
   plugins: [
+    new FriendlyErrorsWebpackPlugin(),
     new UglifyJsPlugin({
       sourceMap: true,
       uglifyOptions: {

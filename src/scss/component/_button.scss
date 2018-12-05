@@ -12,6 +12,9 @@
 }
 .card input:checked + label {
   @include bg("secondaryHover");
+  & svg {
+    opacity: 1;
+  }
 }
 .card input:not(:checked) + label:hover {
   cursor: pointer;

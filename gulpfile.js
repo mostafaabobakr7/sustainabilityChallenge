@@ -3,7 +3,6 @@
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 // html + img
-const nunjucks = require('gulp-nunjucks');
 const nunjucksRender = require('gulp-nunjucks-render');
 const data = require('gulp-data');
 const htmlclean = require('gulp-htmlclean');
@@ -56,7 +55,7 @@ function serverStart() {
 }
 
 function minifySass() {
-  const plugins = [postcssPresetEnv, autoprefixer, cssnano,];
+  const plugins = [postcssPresetEnv, autoprefixer({grid: "autoplace"}), cssnano,];
   return gulp
     .src(sassSrc)
     .pipe(newer('./src/css/style.css'))
@@ -66,7 +65,6 @@ function minifySass() {
       outputStyle: 'compressed',
       sourceComments: false,
     }).on('error', sass.logError))
-
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write('.'))
     .pipe(size({
@@ -85,7 +83,6 @@ function minifyHtml() {
   return gulp
     .src('./src/html/*.html')
     .pipe(data(getHtmlData))
-    // .pipe(nunjucks.compile())
     .pipe(nunjucksRender({path: './src/html'}))
     .on('error', swallowError)
     .pipe(gulp.dest('./src/'))

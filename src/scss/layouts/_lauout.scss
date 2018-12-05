@@ -1,38 +1,22 @@
-$side-nav-width: 20rem;
-$side-nav-height: 10rem;
-$page-wrapper-margin: 21rem;
-
-.main-wrapper {
-  width: 100%;
-}
-
-.side-nav {
-  z-index: z(zNav);
-  position: fixed;
-  right: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  width: $side-nav-width;
-  height: 100vh;
-  @include color("text");
-  @include box("text", $x: -3, $y: 0, $blur: 10);
-}
-
-.page-wrapper {
-  margin-right: $page-wrapper-margin;
-  min-height: 100vh;
-}
-@include media(max, 900) {
-  .side-nav {
-    @include box("text", $x: 0, $y: 3, $blur: 10, $op: 0.3);
-    top: 0;
-    flex-direction: row;
-    width: 100vw;
-    height: $side-nav-height;
+/* autoprefixer grid: autoplace */
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-rows: 80px 1fr 1fr;
+  grid-template-areas: "Header Header" "main side" "main side";
+  @include media(max, 900) {
+    grid-template-rows: 80px 80px 1fr;
+    grid-template-areas: "Header Header" "side side" "main main";
   }
-  .page-wrapper {
-    margin-right: 0;
-    margin-top: $side-nav-height;
-  }
+}
+.Header {
+  grid-area: Header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.side {
+  grid-area: side;
 }
