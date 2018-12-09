@@ -6,7 +6,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 module.exports = {
   devtool: 'source-map',
-  entry: './src/js/components/script.js',
+  entry: './src/js/components/index.js',
   output: {
     path: path.resolve(__dirname, './js/'),
     filename: 'app.js',

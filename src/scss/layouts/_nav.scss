@@ -8,6 +8,7 @@
   // nav-top
   &-top {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 0.5rem 0;
     &:hover img {
@@ -22,11 +23,17 @@
           height: 6rem;
           filter: grayscale(100%);
           transition: all 0.3s ease-in-out;
+          @include media(max, 900) {
+            height: 3.5rem;
+          }
         }
       }
       h1 {
         font-size: 4rem;
         font-weight: 600;
+        @include media(max, 900) {
+          font-size: 2rem;
+        }
       }
     }
   }

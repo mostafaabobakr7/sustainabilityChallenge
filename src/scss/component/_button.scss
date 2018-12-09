@@ -18,7 +18,7 @@
 }
 .card input:not(:checked) + label:hover {
   cursor: pointer;
-  @include bordercolor("secondaryHover");
+  @include bordercolor("secondaryHoverInverse");
 }
 
 .card label {

@@ -15,13 +15,25 @@ import charts from './layout/chartjs.init';
 import 'jquery-countdown';
 
 // #region GLOBAL
+function themeDark(){
+  $('body').removeClass('theme-light');
+  $('body').addClass('theme-dark');
+}
+function themeLight(){
+  $('body').removeClass('theme-dark');
+  $('body').addClass('theme-light');
+}
+if (localStorage.getItem('dark')) {
+  $('#theme-toggle').prop('checked', true);
+  themeDark()
+}
 function changeTheme(){
   if ($('#theme-toggle').is(':checked')) {
-    $('body').removeClass('theme-light');
-    $('body').addClass('theme-dark');
+    themeDark();
+    localStorage.setItem('dark', true);
   } else {
-    $('body').removeClass('theme-dark');
-    $('body').addClass('theme-light');
+    themeLight();
+    localStorage.removeItem('dark');
   }
 }
 

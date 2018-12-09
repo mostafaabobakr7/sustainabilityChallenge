@@ -85,6 +85,7 @@
   {% include '../_loader.njk' %}
   {% import './_navTop.njk' as nav %}
   {{nav.active('home')}}
+  {% include './_navSide.njk' %}
   <main class="main-wrapper main">
     <div class="page-wrapper home">
       <div class="container-fluid">
@@ -93,7 +94,6 @@
     </div>
     {% include '../_settings.njk' %}
   </main>
-  {% include './_navSide.njk' %}
   <script src="./js/app.js"></script>
 </body>
 </html>

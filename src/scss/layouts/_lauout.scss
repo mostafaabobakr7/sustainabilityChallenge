@@ -5,7 +5,8 @@
   grid-template-rows: 80px 1fr 1fr;
   grid-template-areas: "Header Header" "main side" "main side";
   @include media(max, 900) {
-    grid-template-rows: 80px 80px 1fr;
+    grid-template-columns: 1fr 0fr;
+    grid-template-rows: 100px 100px 1fr;
     grid-template-areas: "Header Header" "side side" "main main";
   }
 }
@@ -19,4 +20,25 @@
 
 .side {
   grid-area: side;
+}
+
+.flex {
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  @include media(max, 900) {
+    flex-direction: row;
+    height: auto;
+  }
+  .upper,
+  .lower {
+    @include media(max, 900) {
+      display: flex;
+    }
+  }
 }
