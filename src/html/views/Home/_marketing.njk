@@ -1,5 +1,7 @@
 <section class="card marketing">
-  <div class="card-header"><h3 class="">Marketing</h3></div>
+  <div class="card-header">
+    <h3 class="">Marketing</h3>
+  </div>
   <div class="card-body">
     <h2>Selling price</h2>
     <div class="Bb sellingPrice">
@@ -18,16 +20,45 @@
         {% include '../svg/chart_up.html' %}
         <span>5%</span>
       </label>
-       <div>
-        <canvas id="chart3" height="100"></canvas>
-      </div>
     </div>
     <h2>Promotion</h2>
     <h2>Promotion (% of sales)</h2>
-    <h3>P.R</h3>
+    <div class="d-flex justify-content-around">
+      <h3>P.R</h3>
+      <div class=" pr">
+        <input type="radio" name="pr" id="pr0">
+        <label for="pr0">
+          <span>0%</span>
+        </label>
+        <input type="radio" name="pr" id="pr10">
+        <label for="pr10">
+          <span>10%</span>
+        </label>
+        <input type="radio" name="pr" id="pr20">
+        <label for="pr20">
+          <span>20%</span>
+        </label>
+      </div>
+    </div>
     <h2>Advertising</h2>
     <h2>Advertising (% of sales)</h2>
-    <h3>CSR</h3>
+    <div class="d-flex justify-content-around">
+      <h3>CSR</h3>
+      <div class="csr">
+        <input type="radio" name="csr" id="csr0">
+        <label for="csr0">
+          <span>0%</span>
+        </label>
+        <input type="radio" name="csr" id="csr10">
+        <label for="csr10">
+          <span>10%</span>
+        </label>
+        <input type="radio" name="csr" id="csr20">
+        <label for="csr20">
+          <span>20%</span>
+        </label>
+      </div>
+    </div>
     <h2>Accounts receivable (days)</h2>
     <div class="accountsReceivable">
       <input type="radio" name="accountsReceivable" id="accountsReceivable30">

@@ -17,14 +17,14 @@
 
   .card {
     opacity: 0;
-    @include bg("secondary");
-    @include color("text");
+    background: var(secondary);
+    color: var(txt);
     border: none;
     border-radius: 0.75rem;
     margin: 8px 0;
-    @include box("text");
+    box-shadow: var(txt);
     &-header {
-      @include bg("radio");
+      background: var(cardHeader);
       border-radius: 0.75rem 0.75rem 0 0;
       padding: 0;
       border-bottom: 0;
@@ -32,24 +32,25 @@
         @extend %headertxt;
         font-weight: 700;
         text-align: center;
-        @include color("textInverse");
+        color: var(radio);
       }
     }
     &-body {
+      text-align: center;
       h2 {
         @extend %headertxt;
         font-weight: 600;
-        font-size: 2.8rem;
+        font-size: 2.4rem;
       }
       h3 {
         @extend %headertxt;
         font-weight: 300;
-        font-size: 2.3rem;
+        font-size: 2rem;
       }
       h4 {
         @extend %headertxt;
         font-weight: 100;
-        font-size: 2rem;
+        font-size: 1.7rem;
       }
     }
   }

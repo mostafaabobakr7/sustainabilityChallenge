@@ -30,10 +30,10 @@ input[type="checkbox"].check {
   }
 
   &:checked {
-    @include bg("radio");
+    background: var("radio");
 
     & + label {
-      @include color("radio");
+      color: var("radio");
     }
   }
 
@@ -51,7 +51,7 @@ input[type="checkbox"].check {
 
   &:checked::after {
     content: "";
-    @include bg("radio");
+    background: var("radio");
     display: block;
     position: relative;
     z-index: 100;

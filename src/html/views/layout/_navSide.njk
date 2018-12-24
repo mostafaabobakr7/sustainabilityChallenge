@@ -1,46 +1,48 @@
 <aside class="nav nav-side side">
-  <div class="container-fluid">
-    <div class="flex">
-      <div class="upper">
-        <div class="nav-side__content one">
-          <p>Remaining time until the end of period 1</p>
-          <div id="flipdown" class="flipdown"></div>
-        </div>
-        <div class="nav-side__content two">
-          <p>Forecasted Market Share</p>
-          <span>20.00%</span>
-        </div>
-        <div class="nav-side__content three">
-          <p>Selling Price</p>
-          <span>1000</span>
-        </div>
+  <div class="flex">
+    <div class="upper">
+      <div class="nav-side__content one">
+        <p>Remaining time until the end of period 1</p>
+        <div id="flipdown" class="flipdown"></div>
       </div>
-      <div class="lower">
-        <h5>Corporate key indicators</h5>
-        <div class="nav-side__content ">
-          <p>E.B.I.T. in P1</p>
-          <span>1,122,046</span>
-        </div>
-        <div class="nav-side__content ">
-          <p>Retained earnings in P1</p>
-          <span>600,330</span>
-        </div>
-        <div class="nav-side__content ">
-          <p>Cumul. Headquarter ROI in P1</p>
-          <span>5.30%</span>
-        </div>
-        <div class="nav-side__content ">
-          <p>CSR index</p>
-          <span>100</span>
-        </div>
-        <div class="nav-side__content ">
-          <p>Return on equity (period 4)</p>
-          <span>38.80%</span>
-        </div>
-        <div class="nav-side__content ">
-          <p>Cumulated EVA (period 4)</p>
-          <span>1,021,647</span>
-        </div>
+      <div class="nav-side__content two">
+        <p data-toggle="modal" data-target="#chartModal">Forecasted Market Share</p>
+        <span>20.00%</span>
+      </div>
+      <div class="nav-side__content three">
+        <p data-toggle="modal" data-target="#chartModal">Selling Price</p>
+        <span>1000</span>
+      </div>
+      <div>
+
+        <canvas id="chart4" height="100"></canvas>
+      </div>
+    </div>
+    <div class="lower">
+      <h5>Corporate key indicators</h5>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">E.B.I.T. in P1</p>
+        <span>1,122,046</span>
+      </div>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">Retained earnings in P1</p>
+        <span>600,330</span>
+      </div>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">Cumul. Headquarter ROI in P1</p>
+        <span>5.30%</span>
+      </div>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">CSR index</p>
+        <span>100</span>
+      </div>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">Return on equity (period 4)</p>
+        <span>38.80%</span>
+      </div>
+      <div class="nav-side__content ">
+        <p data-toggle="modal" data-target="#chartModal">Cumulated EVA (period 4)</p>
+        <span>1,021,647</span>
       </div>
     </div>
   </div>

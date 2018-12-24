@@ -1,2 +1,2 @@
-import Waves from '../plugins/waves.min';
+import Waves from '../plugins/waves';
 window.Waves = Waves;

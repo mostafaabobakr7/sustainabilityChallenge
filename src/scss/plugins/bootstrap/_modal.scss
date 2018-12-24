@@ -3,10 +3,10 @@
 // .modal-dialog    - positioning shell for the actual modal
 // .modal-content   - actual modal w/ bg and corners and stuff
 
-
 // Kill the scroll on the body
 .modal-open {
   overflow: hidden;
+  padding-right: 0 !important;
 }
 
 // Container that the modal scrolls within
@@ -19,6 +19,7 @@
   z-index: $zindex-modal;
   display: none;
   overflow: hidden;
+  padding-right: 0 !important;
   // Prevent Chrome on Windows from adding a focus outline. For details, see
   // https://github.com/twbs/bootstrap/pull/10951.
   outline: 0;
@@ -107,7 +108,8 @@
   .close {
     padding: $modal-header-padding;
     // auto on the left force icon to the right even when there is no .modal-title
-    margin: (-$modal-header-padding) (-$modal-header-padding) (-$modal-header-padding) auto;
+    margin: (-$modal-header-padding) (-$modal-header-padding)
+      (-$modal-header-padding) auto;
   }
 }
 
@@ -137,11 +139,11 @@
 
   // Easily place margin between footer elements
   > :not(:first-child) {
-    margin-left: .25rem;
+    margin-left: 0.25rem;
   }
 
   > :not(:last-child) {
-    margin-right: .25rem;
+    margin-right: 0.25rem;
   }
 }
 
@@ -156,7 +158,6 @@
 
 // Scale up the modal
 @include media-breakpoint-up(sm) {
-
   // Automatically set modal's width for larger viewports
   .modal-dialog {
     max-width: $modal-md;
@@ -174,7 +175,6 @@
   .modal-sm {
     max-width: $modal-sm;
   }
-
 }
 
 @include media-breakpoint-up(lg) {

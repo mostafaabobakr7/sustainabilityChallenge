@@ -1,2 +1,3 @@
-Waves.attach('.wave', ['waves-button']);
+
+Waves.attach('.wave', 'input[type="radio"] label');
 Waves.init();

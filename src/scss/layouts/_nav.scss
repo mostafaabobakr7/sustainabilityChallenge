@@ -2,26 +2,23 @@
 /* navigation */
 // Both nav top + side
 .nav {
-  @include bg("secondary");
-  @include color("text");
-  @include box("text", $x: -3, $y: 3, $blur: 5);
+  background: var(navTop);
+  box-shadow: -3px 7px 5px var(txtInverse);
   // nav-top
   &-top {
+    color: var(txtInverse);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0.5rem 0;
-    &:hover img {
-      filter: grayscale(0%);
-    }
     &__content {
       display: flex;
       align-items: center;
       a {
         display: block;
         img {
-          height: 6rem;
-          filter: grayscale(100%);
+          height: 4rem;
+          filter: invert(1);
           transition: all 0.3s ease-in-out;
           @include media(max, 900) {
             height: 3.5rem;
@@ -29,8 +26,10 @@
         }
       }
       h1 {
-        font-size: 4rem;
+        color: #fff;
+        font-size: 2.5rem;
         font-weight: 600;
+        text-align: center;
         @include media(max, 900) {
           font-size: 2rem;
         }
@@ -39,6 +38,8 @@
   }
   // nav-side
   &-side {
+    background: var(secondaryHoverInverse);
+    color: var(txtInverse);
     display: flex;
     flex-direction: column;
     @include media(max, 900) {
@@ -48,11 +49,24 @@
       &:not(:first-child) {
         display: flex;
         justify-content: space-between;
+        padding: 0 10px;
+        p {
+          cursor: pointer;
+          position: relative;
+          &:after {
+            content: "\f64e";
+            font-family: $FontA;
+            position: absolute;
+            right: -18px;
+            top: -3px;
+          }
+        }
       }
       p {
         opacity: 0.8;
         font-weight: 800;
         margin: 0;
+        color: var(radio);
       }
       &.one {
         text-align: center;
@@ -66,6 +80,11 @@
       &.three {
         display: flex;
         justify-content: space-between;
+      }
+    }
+    .lower {
+      h5 {
+        text-align: center;
       }
     }
   }

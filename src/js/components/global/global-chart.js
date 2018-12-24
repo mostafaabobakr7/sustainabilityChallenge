@@ -1,2 +1,2 @@
-import Chart from '../plugins/Chart.min';
+import Chart from '../plugins/Chart';
 window.Chart = Chart;

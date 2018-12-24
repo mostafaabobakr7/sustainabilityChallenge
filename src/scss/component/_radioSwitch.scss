@@ -6,7 +6,7 @@ $width: 4rem;
   cursor: default;
 
   &:checked + .switch__lbl {
-    @include bg("radio");
+    background: var("radio");
 
     &::after {
       transform: translateX($width/2);

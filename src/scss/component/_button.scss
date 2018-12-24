@@ -11,23 +11,18 @@
   display: none;
 }
 .card input:checked + label {
-  @include bg("secondaryHover");
+  background: var(secondaryHover);
   & svg {
     opacity: 1;
   }
 }
-.card input:not(:checked) + label:hover {
-  cursor: pointer;
-  @include bordercolor("secondaryHoverInverse");
-}
 
 .card label {
   text-align: center;
-  height: 8rem;
-  border: 1px solid;
-  @include bordercolor("secondaryHover");
-  border-radius: 2px;
   padding: 1rem;
+  height: 8rem;
+  border: 1px solid transparent;
+  border-radius: 2px;
   transition: all 0.2s ease-in-out;
   &:hover svg {
     opacity: 1;
@@ -37,7 +32,7 @@
     height: 4rem;
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
-    @include fill("text");
+    fill: var(txt);
     &.svg {
       &__equal {
         fill: blue;
@@ -64,5 +59,9 @@
   & span {
     display: block;
   }
+}
+.card input:not(:checked) + label:hover {
+  cursor: pointer;
+  border-color: var(secondaryHoverInverse);
 }
 // btn component end---------------------

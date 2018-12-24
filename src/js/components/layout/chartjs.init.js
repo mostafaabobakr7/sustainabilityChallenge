@@ -1,27 +1,63 @@
-export default function charts() {
+export function chartSide() {
+  let ctx4 = document.getElementById("chart4").getContext("2d");
+  let data4 = [{
+    value: 300,
+    color: "#2f3d4a",
+    highlight: "#2f3d4a",
+    label: "Megna",
+  },
+  {
+    value: 50,
+    color: "#009efb",
+    highlight: "#009efb",
+    label: "Blue",
+  },
+  {
+    value: 100,
+    color: "#55ce63",
+    highlight: "#55ce63",
+    label: "Orange",
+  },
+  ];
+
+  let myDoughnutChart = new Chart(ctx4).Doughnut(data4, {
+    segmentShowStroke: true,
+    segmentStrokeColor: "#fff",
+    segmentStrokeWidth: 0,
+    animationSteps: 100,
+    tooltipCornerRadius: 2,
+    animationEasing: "easeOutBounce",
+    animateRotate: true,
+    animateScale: false,
+    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
+    responsive: true,
+  });
+}
+export function charts() {
+
   let ctx1 = document.getElementById("chart1").getContext("2d");
   let data1 = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [{
-        label: "My Second dataset",
-        fillColor: "rgba(243,245,246,0.9)",
-        strokeColor: "rgba(243,245,246,0.9)",
-        pointColor: "rgba(243,245,246,0.9)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(243,245,246,0.9)",
-        data: [28, 48, 40, 19, 86, 27, 90],
-      },
-      {
-        label: "My First dataset",
-        fillColor: "#009efb",
-        strokeColor: "#009efb",
-        pointColor: "#009efb",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "#009efb",
-        data: [0, 59, 80, 65, 10, 55, 40],
-      },
+      label: "My Second dataset",
+      fillColor: "rgba(243,245,246,0.9)",
+      strokeColor: "rgba(243,245,246,0.9)",
+      pointColor: "rgba(243,245,246,0.9)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(243,245,246,0.9)",
+      data: [28, 48, 40, 19, 86, 27, 90],
+    },
+    {
+      label: "My First dataset",
+      fillColor: "#009efb",
+      strokeColor: "#009efb",
+      pointColor: "#009efb",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "#009efb",
+      data: [0, 59, 80, 65, 10, 55, 40],
+    },
 
     ],
 
@@ -69,21 +105,21 @@ export default function charts() {
   let data2 = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [{
-        label: "My First dataset",
-        fillColor: "#009efb",
-        strokeColor: "#009efb",
-        highlightFill: "#009efb",
-        highlightStroke: "#009efb",
-        data: [10, 30, 80, 61, 26, 75, 40],
-      },
-      {
-        label: "My Second dataset",
-        fillColor: "#55ce63",
-        strokeColor: "#55ce63",
-        highlightFill: "#55ce63",
-        highlightStroke: "#55ce63",
-        data: [28, 48, 40, 19, 86, 27, 90],
-      },
+      label: "My First dataset",
+      fillColor: "#009efb",
+      strokeColor: "#009efb",
+      highlightFill: "#009efb",
+      highlightStroke: "#009efb",
+      data: [10, 30, 80, 61, 26, 75, 40],
+    },
+    {
+      label: "My Second dataset",
+      fillColor: "#55ce63",
+      strokeColor: "#55ce63",
+      highlightFill: "#55ce63",
+      highlightStroke: "#55ce63",
+      data: [28, 48, 40, 19, 86, 27, 90],
+    },
     ],
   };
 
@@ -104,35 +140,35 @@ export default function charts() {
 
   let ctx3 = document.getElementById("chart3").getContext("2d");
   let data3 = [{
-      value: 300,
-      color: "#009efb",
-      highlight: "#009efb",
-      label: "Blue",
-    },
-    {
-      value: 50,
-      color: "#edf1f5",
-      highlight: "#edf1f5",
-      label: "Light",
-    },
-    {
-      value: 50,
-      color: "#2f3d4a",
-      highlight: "#2f3d4a",
-      label: "Dark",
-    },
-    {
-      value: 50,
-      color: "#55ce63",
-      highlight: "#55ce63",
-      label: "Megna",
-    },
-    {
-      value: 100,
-      color: "#7460ee",
-      highlight: "#7460ee",
-      label: "Orange",
-    },
+    value: 300,
+    color: "#009efb",
+    highlight: "#009efb",
+    label: "Blue",
+  },
+  {
+    value: 50,
+    color: "#edf1f5",
+    highlight: "#edf1f5",
+    label: "Light",
+  },
+  {
+    value: 50,
+    color: "#2f3d4a",
+    highlight: "#2f3d4a",
+    label: "Dark",
+  },
+  {
+    value: 50,
+    color: "#55ce63",
+    highlight: "#55ce63",
+    label: "Megna",
+  },
+  {
+    value: 100,
+    color: "#7460ee",
+    highlight: "#7460ee",
+    label: "Orange",
+  },
   ];
 
   let myPieChart = new Chart(ctx3).Pie(data3, {
@@ -148,65 +184,31 @@ export default function charts() {
     responsive: true,
   });
 
-  let ctx4 = document.getElementById("chart4").getContext("2d");
-  let data4 = [{
-      value: 300,
-      color: "#2f3d4a",
-      highlight: "#2f3d4a",
-      label: "Megna",
-    },
-    {
-      value: 50,
-      color: "#009efb",
-      highlight: "#009efb",
-      label: "Blue",
-    },
-    {
-      value: 100,
-      color: "#55ce63",
-      highlight: "#55ce63",
-      label: "Orange",
-    },
-  ];
-
-  let myDoughnutChart = new Chart(ctx4).Doughnut(data4, {
-    segmentShowStroke: true,
-    segmentStrokeColor: "#fff",
-    segmentStrokeWidth: 0,
-    animationSteps: 100,
-    tooltipCornerRadius: 2,
-    animationEasing: "easeOutBounce",
-    animateRotate: true,
-    animateScale: false,
-    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
-    responsive: true,
-  });
-
   let ctx5 = document.getElementById("chart5").getContext("2d");
   let data5 = [{
-      value: 300,
-      color: "#2f3d4a",
-      highlight: "#2f3d4a",
-      label: "Megna",
-    },
-    {
-      value: 50,
-      color: "#009efb",
-      highlight: "#009efb",
-      label: "Blue",
-    },
-    {
-      value: 100,
-      color: "#55ce63",
-      highlight: "#55ce63",
-      label: "Orange",
-    },
-    {
-      value: 40,
-      color: "#949FB1",
-      highlight: "#A8B3C5",
-      label: "Grey",
-    },
+    value: 300,
+    color: "#2f3d4a",
+    highlight: "#2f3d4a",
+    label: "Megna",
+  },
+  {
+    value: 50,
+    color: "#009efb",
+    highlight: "#009efb",
+    label: "Blue",
+  },
+  {
+    value: 100,
+    color: "#55ce63",
+    highlight: "#55ce63",
+    label: "Orange",
+  },
+  {
+    value: 40,
+    color: "#949FB1",
+    highlight: "#A8B3C5",
+    label: "Grey",
+  },
 
   ];
 
@@ -233,25 +235,25 @@ export default function charts() {
   let data6 = {
     labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
     datasets: [{
-        label: "My First dataset",
-        fillColor: "#55ce63",
-        strokeColor: "#55ce63",
-        pointColor: "#55ce63",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "#55ce63",
-        data: [65, 59, 90, 81, 56, 55, 40],
-      },
-      {
-        label: "My Second dataset",
-        fillColor: "rgba(97,100,193,0.8)",
-        strokeColor: "rgba(97,100,193,1)",
-        pointColor: "rgba(97,100,193,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(97,100,193,1)",
-        data: [28, 48, 40, 19, 96, 27, 100],
-      },
+      label: "My First dataset",
+      fillColor: "#55ce63",
+      strokeColor: "#55ce63",
+      pointColor: "#55ce63",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "#55ce63",
+      data: [65, 59, 90, 81, 56, 55, 40],
+    },
+    {
+      label: "My Second dataset",
+      fillColor: "rgba(97,100,193,0.8)",
+      strokeColor: "rgba(97,100,193,1)",
+      pointColor: "rgba(97,100,193,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(97,100,193,1)",
+      data: [28, 48, 40, 19, 96, 27, 100],
+    },
     ],
   };
 

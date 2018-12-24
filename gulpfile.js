@@ -24,25 +24,26 @@ const easingradients = require('postcss-easing-gradients');
 const fs = require('fs');
 const path = require('path');
 const size = require('gulp-size');
-const gzip = require('gulp-gzip');
 const newer = require('gulp-newer');
 const plumber = require('gulp-plumber');
 // js
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
-// src and build :
-const htmlSrc = './src/html/**/*';
-const htmlDest = './';
-const sassSrc = './src/scss/**/*.scss';
-const sassDest = './src/css';
-const cssSrc = './src/css/style.css';
-const cssDest = './css';
-const jsSrc = './src/js/components/script.js';
-const jsFolder = './src/js/components/**/*.js';
-const jsDest = './js/';
-const imgSrc = './src/img/*';
-const imgDest = './img';
+// FOLDERS :
+var srcHTML = './src/html/*.html';
+var srcSASS = './src/scss/style.scss';
+var srcJS = './src/js/components/index.js';
+var srcIMG = './src/img/**/*';
+var outSASS = './src/css';
+var outJS = './src/js';
+var watchHTML = './src/html/**/*';
+var watchSASS = './src/scss/**/*.scss';
+var watchJS = './src/js/components/**/*.js';
+var destHTML = './docs';
+var destCSS = './docs/css';
+var destJS = './docs/js';
+var destIMG = './docs/img';
 // ERROR function
 function swallowError (error) {
   console.log(error.toString());
@@ -57,8 +58,8 @@ function serverStart() {
 function minifySass() {
   const plugins = [postcssPresetEnv, autoprefixer({grid: "autoplace"}), cssnano,];
   return gulp
-    .src(sassSrc)
-    .pipe(newer('./src/css/style.css'))
+    .src(srcSASS)
+    .pipe(newer({ dest: outSASS, ext: '.css', extra:watchSASS }))
     .pipe(sourcemaps.init({ loadMaps: true, }))
     .pipe(sassGlob())
     .pipe(sass({
@@ -71,8 +72,8 @@ function minifySass() {
       showFiles: true,
       showTotal: false,
     }))
-    .pipe(gulp.dest(sassDest))
-    .pipe(gulp.dest(cssDest))
+    .pipe(gulp.dest(outSASS))
+    .pipe(gulp.dest(destCSS))
     .pipe(browserSync.stream());
 }
 
@@ -81,7 +82,7 @@ function getHtmlData(){
 }
 function minifyHtml() {
   return gulp
-    .src('./src/html/*.html')
+    .src(srcHTML)
     .pipe(data(getHtmlData))
     .pipe(nunjucksRender({path: './src/html'}))
     .on('error', swallowError)
@@ -92,38 +93,35 @@ function minifyHtml() {
         return html.replace(/\begg(s?)\b/gi, 'omelet$1');
       },
     }))
-    .pipe(gulp.dest(htmlDest))
+    .pipe(gulp.dest(destHTML))
     .pipe(browserSync.stream());
 }
 
 function minifyJs() {
   return gulp
-    .src(jsSrc)
+    .src(srcJS)
     .pipe(webpackStream(webpackConfig), webpack)
     .on('error', swallowError)
-    .pipe(gulp.dest('./src/js/'))
-    .pipe(gulp.dest('./js/'))
+    .pipe(gulp.dest(outJS))
+    .pipe(gulp.dest(destJS))
     .pipe(size({
       showFiles: true,
       showTotal: false,
     }))
-    .pipe(gzip())
-    .pipe(gulp.dest('./src/js/'))
-    .pipe(gulp.dest(jsDest))
     .pipe(browserSync.stream());
 }
 
 function minifyImg() {
   return gulp
-    .src(imgSrc)
+    .src(srcIMG)
     .pipe(plumber(function (error) {
       console.error(error.message);
       gulp.emit('finish');
     }))
-    .pipe(newer(imgDest))
+    .pipe(newer(destIMG))
     .pipe(imagemin())
     .on('error', swallowError)
-    .pipe(gulp.dest(imgDest))
+    .pipe(gulp.dest(destIMG))
     .pipe(browserSync.stream());
 }
 
@@ -136,11 +134,11 @@ gulp.task('scripts', minifyJs);
 
 
 function watchChange() {
-  gulp.watch(sassSrc, ['sass',reload]);
-  gulp.watch(jsFolder, ['scripts',reload]);
-  gulp.watch(imgSrc, ['minify-img',reload]);
-  gulp.watch(htmlSrc, ['html',reload]);
+  gulp.watch(watchHTML, ['html',reload]);
   gulp.watch('./src/data.json', ['html',reload]);
+  gulp.watch(watchSASS, ['sass',reload]);
+  gulp.watch(watchJS, ['scripts',reload]);
+  gulp.watch(srcIMG, ['minify-img',reload]);
 }
 
 gulp.task('default', ['html', 'minify-img', 'scripts', 'sass', 'serve',], watchChange);

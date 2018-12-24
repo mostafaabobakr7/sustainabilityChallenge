@@ -8,29 +8,58 @@ $zMap: (
   zSearchQuestions: 1050,
   zControlQuestions: 1000
 );
+@function z($key) {
+  @if map-has-key($zMap, $key) {
+    @return map-get($zMap, $key);
+  }
+  @warn "Unknown`#{$key}` in #{$zMap}.";
+  @return null;
+}
 // -------------------------------------------------------------------
 // THE INDIVIDUAL MIXINS APPROACH--------------------------------
 // https://www.sitepoint.com/sass-theming-neverending-story/
 $themes: (
   "light": (
-    "bg": linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%),
-    "radio": #764ba2,
-    "text": #333,
-    "textInverse": #dee2e6,
+    "bg": #eef1f5,
+    "cardHeader": #ddd,
+    "bgGred": linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%),
+    "radio": #10adbc,
+    "navTop": #a000a3,
+    "txt": #333333,
+    "txtInverse": #dee2e6,
     "primary": #eef1f5,
-    "secondary": #fff,
+    "secondary": #ffffff,
     "secondaryHover": #e7e7e7,
-    "secondaryHoverInverse": #252525
+    "secondaryHoverInverse": #333
   ),
   "dark": (
-    "bg": linear-gradient(to top, #0e0e0e 0%, #101010 100%),
-    "radio": #764ba2,
-    "text": #acacac,
-    "textInverse": #1b1b1b,
+    "bg": #0e0e0e,
+    "cardHeader": #ddd,
+    "bgGred": linear-gradient(to top, #0e0e0e 0%, #101010 100%),
+    "radio": #10adbc,
+    "navTop": #a000a3,
+    "txt": #acacac,
+    "txtInverse": #1b1b1b,
     "primary": #101010,
     "secondary": #1b1b1b,
     "secondaryHover": #252525,
     "secondaryHoverInverse": #e7e7e7
   )
 ) !default;
+// GENERATE HTML{--variable:value};
+@mixin root {
+  @each $theme, $colors in $themes {
+    @each $key, $color in $colors {
+      html[data-theme="#{$theme}"] {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+@include root;
+// ---------CSS VAR themes--------
+@function var($var) {
+  $color: unquote("var(--#{$var})");
+  @return $color;
+}
 // ------------------------------------------------
